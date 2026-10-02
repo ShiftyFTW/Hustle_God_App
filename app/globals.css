@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 18% 8%;
+    --foreground: 210 20% 94%;
+    --card: 222 16% 11%;
+    --card-foreground: 210 20% 94%;
+    --popover: 222 16% 11%;
+    --popover-foreground: 210 20% 94%;
+    --primary: 210 100% 56%;
+    --primary-foreground: 222 18% 8%;
+    --secondary: 222 14% 16%;
+    --secondary-foreground: 210 20% 82%;
+    --muted: 222 14% 16%;
+    --muted-foreground: 210 12% 52%;
+    --accent: 222 14% 20%;
+    --accent-foreground: 210 20% 94%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 14% 18%;
+    --input: 222 14% 16%;
+    --ring: 210 100% 56%;
+    --radius: 0.5rem;
+    --chart-1: 210 100% 56%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Focus ring */
+.focus-ring {
+  @apply outline-none ring-2 ring-primary/60 ring-offset-2 ring-offset-background;
+}
+
+/* Agent pulse animation */
+@keyframes agent-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.agent-running {
+  animation: agent-pulse 1.5s ease-in-out infinite;
+}
+
+/* Stat card hover */
+.stat-card {
+  @apply transition-all duration-200;
+}
+.stat-card:hover {
+  @apply border-primary/40 bg-accent/60;
+}

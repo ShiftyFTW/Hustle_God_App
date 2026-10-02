@@ -1,0 +1,17 @@
+[functions.identify-sneaker]
+verify_jwt = true
+
+[functions.condition-sneaker]
+verify_jwt = true
+
+[functions.comps-sneaker]
+verify_jwt = true
+
+[functions.listings-sneaker]
+verify_jwt = true
+
+[functions.verify-sneaker]
+verify_jwt = true
+
+[functions.detect-category]
+verify_jwt = true
